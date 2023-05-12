@@ -11,3 +11,5 @@ public class GelateriaLaCarraiaApplication {
 	}
 
 }
+
+// application start
