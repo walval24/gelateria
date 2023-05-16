@@ -8,6 +8,7 @@ public class ProductDTO {
     private boolean isNutfree;
     private boolean isVegan;
     private  byte [] cover;
+    private long supplierId;
 
 
     public long getId() {
@@ -56,6 +57,14 @@ public class ProductDTO {
 
     public void setCover(byte[] cover) {
         this.cover = cover;
+    }
+
+    public long getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(long supplierId) {
+        this.supplierId = supplierId;
     }
 }
 

@@ -21,6 +21,10 @@ public class Product {
     @Lob
     private byte[] cover;
 
+    @ManyToOne
+    @JoinColumn(name = "id_supplier", nullable = false)
+    private Supplier supplier;
+
     public long getId() {
         return id;
     }
@@ -67,5 +71,13 @@ public class Product {
 
     public void setCover(byte[] cover) {
         this.cover = cover;
+    }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
     }
 }

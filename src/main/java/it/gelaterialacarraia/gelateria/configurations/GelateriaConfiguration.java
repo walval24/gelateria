@@ -9,9 +9,8 @@ public class GelateriaConfiguration {
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
+
     }
-
-
 }
   /*  Questo metodo restituisce un oggetto ModelMapper,
   ossia una libreria che aiuta a mappare oggetti da un tipo ad un altro.

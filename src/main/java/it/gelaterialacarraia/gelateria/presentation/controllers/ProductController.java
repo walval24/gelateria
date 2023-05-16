@@ -1,8 +1,11 @@
 package it.gelaterialacarraia.gelateria.presentation.controllers;
 
+import it.gelaterialacarraia.gelateria.persistence.entities.Supplier;
 import it.gelaterialacarraia.gelateria.presentation.dtos.ProductDTO;
 import it.gelaterialacarraia.gelateria.persistence.entities.Product;
+import it.gelaterialacarraia.gelateria.presentation.dtos.SupplierDTO;
 import it.gelaterialacarraia.gelateria.services.ProductService;
+import it.gelaterialacarraia.gelateria.services.SupplierService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +20,9 @@ public class ProductController {
     private ProductService productService; //Istanza del servizio ProductService
     @Autowired
     private ModelMapper modelMapper; //Istanza della classe ModelMapper
+
+    @Autowired
+    private SupplierService supplierService;
 
 
     @GetMapping //Questa annotazione mappa una richiesta HTTP GET a questo metodo
@@ -53,14 +59,31 @@ public class ProductController {
         return convertToDTO(productService.delete(id));
     }
 
+    @GetMapping ("/{id}/supplier")
+    public SupplierDTO getSupplier(@PathVariable long id){
+        Product product = productService.getById(id);
+
+        return convertToSupplierDTO(product.getSupplier());
+    }
+
     private ProductDTO convertToDTO (Product product){  // Converte un oggetto Product in un oggetto ProductDTO
         return modelMapper.map(product,ProductDTO.class);
     }
 
     private Product convertToEntity (ProductDTO dto){   // Converte un oggetto ProductDTO in un oggetto Product
-        return modelMapper.map(dto, Product.class);
+        Product product = modelMapper.map(dto, Product.class);
+
+        Supplier productSupplier = supplierService.getById(dto.getSupplierId());
+
+        product.setSupplier(productSupplier);
+
+
+        return product;
     }
 
+    private SupplierDTO convertToSupplierDTO (Supplier supplier) {
+        return modelMapper.map(supplier,SupplierDTO.class);
+    }
 
 }
 
