@@ -20,7 +20,6 @@ public class ProductController {
     private ProductService productService; //Istanza del servizio ProductService
     @Autowired
     private ModelMapper modelMapper; //Istanza della classe ModelMapper
-
     @Autowired
     private SupplierService supplierService;
 

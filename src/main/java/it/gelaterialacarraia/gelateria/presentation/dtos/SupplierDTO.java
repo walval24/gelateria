@@ -4,7 +4,7 @@ public class SupplierDTO {
 
     private long id;
     private String name;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private String email;
 
     public long getId() {
@@ -23,11 +23,11 @@ public class SupplierDTO {
         this.name = name;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

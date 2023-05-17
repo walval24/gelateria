@@ -6,7 +6,6 @@ public class ProductDTO {
     private String name;
     private boolean isDairyFree;
     private boolean isNutfree;
-    private boolean isVegan;
     private  byte [] cover;
     private long supplierId;
 
@@ -41,14 +40,6 @@ public class ProductDTO {
 
     public void setNutfree(boolean nutfree) {
         isNutfree = nutfree;
-    }
-
-    public boolean isVegan() {
-        return isVegan;
-    }
-
-    public void setVegan(boolean vegan) {
-        isVegan = vegan;
     }
 
     public byte[] getCover() {

@@ -15,8 +15,6 @@ public class Product {
     private boolean isDairyFree;
     @Column (name = "is_nut_free", nullable = false, columnDefinition = "BOOLEAN NOT NULL DEFAULT false")
     private boolean isNutFree;
-    @Column (name = "is_vegan", nullable = false, columnDefinition = "BOOLEAN NOT NULL DEFAULT false")
-    private boolean isVegan;
     @Column (name= "cover", columnDefinition = "MEDIUMBLOB")
     @Lob
     private byte[] cover;
@@ -55,14 +53,6 @@ public class Product {
 
     public void setNutFree(boolean nutFree) {
         isNutFree = nutFree;
-    }
-
-    public boolean isVegan() {
-        return isVegan;
-    }
-
-    public void setVegan(boolean vegan) {
-        isVegan = vegan;
     }
 
     public byte[] getCover() {

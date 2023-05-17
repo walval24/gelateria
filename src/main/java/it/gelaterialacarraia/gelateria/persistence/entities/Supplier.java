@@ -14,7 +14,7 @@ public class Supplier {
     private String name;
 
     @Column (name = "phone_number")
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     @Column (name = "email")
     private String email;
@@ -38,11 +38,11 @@ public class Supplier {
         this.name = name;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
